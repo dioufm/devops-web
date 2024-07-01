@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   devops-service:
-    image: devops-service:latest
+    image: mamaddiouf/devops-service:latest
     ports:
       - "8080:8080"
     depends_on:

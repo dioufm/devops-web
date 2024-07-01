@@ -34,10 +34,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Pull image docker from repository
         run: sudo docker pull docker:latest
-      - name: Pull Image from docker hub
-        run: sudo docker pull mamaddiouf/devops-service:latest
-      - name: Delete old container
-        run: sudo docker rm -f mamaddiouf/devops-service
+      - name: Run docker compose Down
+        run: sudo docker-compose down
       - name: Run docker compose up
         run: sudo docker-compose up
 
