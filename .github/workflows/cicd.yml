@@ -26,3 +26,16 @@ jobs:
       - name: Publish image to docker hub
         run: docker push mamaddiouf/devops-service:latest
 
+  deploy:
+    needs: build
+    runs-on: [ aws-ec2 ]
+    steps:
+      - name: Pull Image from docker hub
+        run: docker pull mamaddiouf/devops-service:latest
+      - name: Delete old container
+        run: docker rm -f mamaddiouf/devops-service
+      - name: Pull image docker from repository
+        run: docker pull docker:latest
+      - name: Run docker compose up
+        run: docker-compose up
+
