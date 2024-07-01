@@ -30,6 +30,8 @@ jobs:
     needs: build
     runs-on: [ devops-web-deploy-aws-ec2 ]
     steps:
+      - uses: actions/checkout@v4
+      - name: Check that the image builds
       - name: Pull image docker from repository
         run: docker pull docker:latest
       - name: Pull Image from docker hub
