@@ -1,0 +1,85 @@
+<div class="container center-app">
+	<div class="row div-to-align">
+		<div class="row justify-content-center">
+			<div class="row justify-content-md-center">
+				<div class="col-4">
+				  <div class="card" style="width: '18rem'">
+					<div class="card-body">
+					  <h5 class="card-title">Backend response</h5>
+					  <p class="card-text">Content: {{data |json}}</p>
+					  <ul>
+						<li *ngFor="let line of data">{{line}}</li>
+					  </ul>
+					</div>
+				  </div>
+				</div>
+				<div class="card mt-5">
+					<div class="card-body">
+						<h3 class="card-title text-center">Inscription</h3>
+						<form [formGroup]="form" (ngSubmit)="onSubmit()">
+							<div class="mb-3">
+
+								  <div class="form-group">
+									<label for="firstName" class="form-label">Prénom:</label>
+									<input type="text" formControlName="firstName" class="form-control"
+										[ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" />
+									@if (submitted && f['firstName'].errors) {
+									<div class="invalid-feedback">
+										@if (f['firstName'].errors['required']) {
+										<div>Prénom est obligatoire</div>
+										}
+									</div>
+									}
+								</div>
+
+								<div class="form-group">
+									<label for="lastName" class="form-label">Nom:</label>
+									<input type="text" formControlName="lastName" class="form-control"
+										[ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+									@if (submitted && f['lastName'].errors) {
+									<div class="invalid-feedback">
+										@if (f['lastName'].errors['required']) {
+										<div>Nom est obligatoire</div>
+										}
+									</div>
+									}
+								</div>
+
+
+								<div class="form-group">
+									<label for="login" class="form-label">Email:</label>
+									<input type="text" formControlName="login" class="form-control"
+										[ngClass]="{ 'is-invalid': submitted && f['login'].errors }" />
+									@if (submitted && f['login'].errors) {
+									<div class="invalid-feedback">
+										@if (f['login'].errors['required']) {
+										<div>email is required</div>
+										}
+									</div>
+									}
+								</div>
+							</div>
+							<div class="mb-3">
+								<label for="password" class="form-label">Mot de passe:</label>
+								<input type="text" formControlName="password" class="form-control"
+									[ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+								@if (submitted && f['password'].errors) {
+								<div class="invalid-feedback">
+									@if (f['password'].errors['required']) {
+									<div>Le mot de passe est obligatoire.</div>
+									}
+								</div>
+								}
+							</div>
+							<button type="submit" class="btn btn-primary w-100" [disabled]="form.invalid">Creer un compte
+								</button>
+						</form>
+						<p class="text-center mt-3">Vous avez un compte ? 
+							<a class="btn btn-warning float-right" routerLink="/auth/login">Se connecter</a>
+						</p>
+						
+					</div>
+				</div>
+		</div>
+	</div>
+</div>

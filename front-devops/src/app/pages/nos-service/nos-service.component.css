@@ -1,0 +1,14 @@
+.container {
+  margin-top: 100px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.fusion-responsive-typography-calculated{
+  text-align: justify; 
+  font-size: 40; 
+  line-height: 1.2;
+  line-height: 40px;
+}

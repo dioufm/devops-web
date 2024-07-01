@@ -1,0 +1,23 @@
+spring.application.name: devops-service
+
+server.port: 8080
+#spring.datasource.url=jdbc:postgresql://database-ligueye.cluster-cjyyqeia2t4n.eu-north-1.rds.amazonaws.com:5432/postgres
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+        ddl-auto: create
+
+#Eureka discovery service
+#eureka.client.register-with-eureka=true
+#eureka.client.fetch-registry=true
+#eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+#eureka.instance.hostname=localhost
+#eureka.instance.prefer-ip-address=true
+
+#Security
+security.jwt.token.secret-key: my-secret-key

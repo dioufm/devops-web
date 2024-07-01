@@ -1,0 +1,58 @@
+version: '3.1'
+services:
+  devops-service:
+    image: devops-service:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - devops-db
+    environment:
+      - spring.application.name=devops-service
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://devops-db:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=devops-user
+      - SPRING_DATASOURCE_PASSWORD=devops-password
+    networks:
+      - pg-network
+
+  devops-odoo:
+    image: odoo:17.0
+    depends_on:
+      - devops-db
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=devops-db
+      - USER=devops-user
+      - PASSWORD=devops-password
+    networks:
+      - pg-network
+
+  devops-db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=devops-password
+      - POSTGRES_USER=devops-user
+    ports:
+      - "5432:5432"
+    networks:
+      - pg-network
+    volumes:
+        - pg-data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pg-admin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin_password
+    ports:
+      - "5050:80"
+    networks:
+      - pg-network
+
+networks:
+  pg-network:
+
+volumes:
+  pg-data:

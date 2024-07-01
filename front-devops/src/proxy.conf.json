@@ -1,0 +1,21 @@
+{
+    "/api-users/*": {
+        "target": "http://localhost:8080/users",
+        "secure": false,
+        "pathRewrite": {
+            "^/api-users": ""
+          },
+        "logLevel": "debug",
+        "changeOrigin": true
+    },
+
+    "/api-catalogue/*": {
+        "target": "http://localhost:8989/catalogue",
+        "secure": false,
+        "pathRewrite": {
+            "^/api-catalogue": ""
+          },
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

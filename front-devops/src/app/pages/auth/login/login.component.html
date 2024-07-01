@@ -1,0 +1,83 @@
+<div class="container center-app">
+	<div class="row div-to-align">
+		<div class="row justify-content-center">
+			<div class="row justify-content-md-center">
+				<div class="col-4">
+				  <div class="card" style="width: '18rem'">
+					<div class="card-body">
+					  <h5 class="card-title">Backend response</h5>
+					  <p class="card-text">Content: {{data |json}}</p>
+					  <ul>
+						<li *ngFor="let line of data">{{line}}</li>
+					  </ul>
+					</div>
+				  </div>
+				</div>
+			  </div>
+				<div class="card mt-5">
+					<div class="card-body">
+						<h3 class="card-title text-center">Connexion</h3>
+
+						<!-- Socials Register buttons -->
+						<div class="text-center">
+							<p>Vous n'avez pas de compte ? <a routerLink="/auth/register">S'inscrire</a></p>
+							<p>Ou vous connecter avec :</p>
+
+							<button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+							<i class="fab fa-google"></i>
+							</button>
+
+
+							<button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+								<i class="fab fa-facebook-f"></i>
+							  </button>
+				  
+							  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+								<i class="fab fa-twitter"></i>
+							  </button>
+				  
+							  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+								<i class="fab fa-linkedin-in"></i>
+							  </button>
+						</div>
+						<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+							<div class="mb-3">
+
+								<div class="form-group">
+									<label for="email" class="form-label">Email:</label>
+									<input type="text" formControlName="email" class="form-control"
+										[ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+									@if (submitted && f['email'].errors) {
+									<div class="invalid-feedback">
+										@if (f['email'].errors['required']) {
+										<div>Votre email est obligatoire.</div>
+										}
+									</div>
+									}
+								</div>
+							</div>
+							<div class="mb-3">
+								<label for="password" class="form-label">Mot de passe:</label>
+								<input type="text" formControlName="password" class="form-control"
+									[ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+								@if (submitted && f['password'].errors) {
+								<div class="invalid-feedback">
+									@if (f['password'].errors['required']) {
+									<div>Le mot de passe est obligatoire.</div>
+									}
+								</div>
+								}
+							</div>
+							<button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Se
+								connecter</button>
+						</form>
+						<p class="text-center mt-3">Vous n'avez pas de compte? 
+							<a class="btn btn-warning float-right" routerLink="/auth/register">S'inscrire</a>
+
+						</p>
+						
+					</div>
+				</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+.container {
+  margin-top: 100px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.fusion-responsive-typography-calculated{
+  text-align: justify; 
+  font-size: 40; 
+  line-height: 1.2;
+  line-height: 40px;
+}
+
+.higlight {
+  background-color:  #1976d2;
+  color: white;
+  border-top: 1px solid #1976d2;
+  border-bottom: 1px solid #1976d2;
+  font-weight: 500;
+}
+
+.formation {
+  margin: 10px;
+}

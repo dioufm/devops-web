@@ -1,0 +1,13 @@
+
+.center-app{
+    margin-top: 150px;
+    align-content: center;
+    margin-bottom: 150px;
+    
+}
+
+.div-to-align {
+    width: 50%;
+    margin: auto;
+    /* .... */
+}

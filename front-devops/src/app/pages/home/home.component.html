@@ -1,0 +1,162 @@
+<main>
+  <div class="container">
+
+    <!-- section principale -->
+    <div class="row">
+      <div id="intro" class="p-5 text-center bg-light">
+        <h1 class="mb-3 h2">Devops pour tous!</h1>
+        <h3 class="mb-3 h2">Devenez un expert Devops en suivant nos formations</h3>
+        <a class="btn btn-primary m-2 higlight" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button" rel="nofollow"
+          data-mdb-ripple-init target="_blank">Voir toutes nos formations</a>
+        <a class="btn btn-primary m-2 higlight" href="https://mdbootstrap.com/docs/standard/" target="_blank"
+          data-mdb-ripple-init role="button">Voir nos méthodes de formations individualisées</a>
+      </div>
+    </div>
+    <!-- end section principale -->
+
+    <!-- section formations -->
+    <section class="text-center">
+
+      <div class="row">
+         <pre>{{formations | json }}</pre> 
+         <!-- section formations DEV -->
+        <div class="col-lg-6 col-md-12 mb-6">
+          <h1 class="mb-3 h2">Nos formations <span class="higlight">DEV</span> </h1>
+          <div class="row">
+            @for (formation of formations; track formation) 
+            {
+              <div class="col-lg-6 col-md-12 mb-6">
+                <div class="card">
+                  <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                    <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{formation.title}}dsfsdf</h5>
+                    <p class="card-text">
+                      {{formation.body}}gdfgd
+                    </p>
+                    <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Read</a>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+
+         <!-- section formations OPS -->
+        <div class="col-lg-6 col-md-12 mb-6">
+          <h1 class="mb-3 h2 formation">Nos formations <span class="higlight">OPS</span> </h1>
+          <div class="row">
+            <div class="col-lg-6 col-md-12 mb-6">
+              <div class="card">
+                <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                  <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">DevOps l'essentiel</h5>
+                  <p class="card-text">
+                    Une formation accélérée et découverte sur la méthodologie DevOps pour la pratique Devops dans tes
+                    projets.
+                  </p>
+                  <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Read</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mb-6">
+              <div class="card">
+                <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                  <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Les outils Devops </h5>
+                  <p class="card-text">
+                    La présentation des différents outils Devops : Docker, GitLab, Jenkins, Ansible, Terraform par la
+                    pratique
+                  </p>
+                  <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Read</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+    <!-- end section principale -->
+
+
+    <div class="row">
+      <div class="col-md-9">
+        <div class="content">
+          <h1>Rejoins la team DevOps Web !</h1>
+          <div
+            class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+            <div class="fusion-text fusion-text-1">
+              <p style="text-align: justify">Conçue comme une réponse à la dualité entre les développeurs et les
+                opérationnels, la culture DevOps s’étend au point de prendre place dans <a
+                  href="https://www.silicon.fr/avis-expert/securisation-des-projets-devops-la-culture-serait-elle-la-cle-du-succes"
+                  target="_blank" rel="noopener">37 % des entreprises</a> mondiales. Mais une équipe DevOps ne travaille
+                pas sans ses outils. Rares sont les groupes qui fonctionnent sans l’aide de logiciels, les solutions les
+                plus populaires étant open source. Retrouvez dans notre guide les outils libres et non libres les plus
+                puissants du marché.</p>
+              <h2 class="fusion-responsive-typography-calculated">Le développement CI/CD</h2>
+              <p style="text-align: justify">Le développement CI/CD traduit la phase de test qui challenge le code.
+                L’acronyme CI/CD signifie «&thinsp;Intégration Continue/Déploiement Continu&thinsp;». Plutôt que les
+                équipes de développement livrent leur code source aux opérationnels en un seul bloc et à un seul moment,
+                le code est testé tout au long de son écriture ou de ses modifications. Les outils d’intégration et de
+                déploiement réduisent le temps nécessaire pour créer de nouvelles fonctions. Le code, fonctionnel
+                puisque vérifié, servira de base aux opérationnels.</p>
+              <!-- <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">GitHub</h3>
+            <p style="text-align: justify">Le service d’hébergement de projet et de programmation est depuis quelque temps la star des outils CI/CD. En enregistrant toutes les modifications du code source, GitHub permet de suivre l’avancement des travaux et d’avoir un aperçu sur l’historique de travail. Très avantageux pour une équipe, GitHub fusionne les codes sources.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">SourceForge</h3>
+            <p style="text-align: justify">L’adversaire de GitHub permet de créer des projets en open source grâce à une palette d’outils très complète : wikis de projets, accès à une BDD MySQL, url de sous-domaines uniques, métriques et analyses.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">Les outils CI/CD alternatifs</h3>
+            <p style="text-align: justify">Si vous voulez éviter les deux premières sources, tournez-vous vers GitLab et son accès facilité à Azure DevOps&thinsp;; Bitbucket et son environnement complet intégrant un puissant outil de suivi des problèmes ou Beanstalk qui permet de coder, tester et déployer directement depuis un navigateur.</p>
+            <h2 style="text-align: justify; --fontSize: 40; line-height: 1.2;" data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated">La gestion des configurations</h2>
+            <p style="text-align: justify">Elle rassemble les processus qui valident la conformité d’un produit face aux diverses exigences durant tout son cycle de vie.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">Ansible</h3>
+            <p style="text-align: justify">Ansible automatise des tâches courantes telles que le provisioning dans le cloud, le déploiement d’application et l’orchestration IT. Il facilite l’installation, la configuration et la modification d’un ou plusieurs serveurs de manière prévisible et déclarative.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">Jenkins</h3>
+            <p style="text-align: justify">Jenkins permet aux équipes de surveiller la réalisation des tâches répétées. L’outil s’appuie sur ses nombreux plugins pour délivrer une solution simple d’utilisation pratique dans les configurations et les tests de régression d’automatisation.</p>
+            <h2 style="text-align: justify; --fontSize: 40; line-height: 1.2;" data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated">Infrastructure as code</h2>
+            <p style="text-align: justify">Elle chiffre l’ensemble des processus afin d’automatiser les tâches reproductibles telles que le provisioning, la configuration ou les déploiements. Les plateformes répondent, pour la plupart d’entre elles, à la philosophie UNIX : elles ne font qu’une chose, mais elles le font bien.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">Terraform</h3>
+            <p style="text-align: justify">L’environnement logiciel Terraform se concentre principalement sur le provisioning d’infrastructure. Il automatise la construction des ressources et facilite la définition des typologies cloud pour les principaux fournisseurs d’infrastructure.</p>
+            <h2 style="text-align: justify; --fontSize: 40; line-height: 1.2;" data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated">Doper la production</h2>
+            <p style="text-align: justify">Grâce aux conteneurs, les applications sont empaquetées avec leur contexte d’exécution. Elles sont livrées avec tous leurs logiciels, bibliothèques et documents nécessaires. Ces paquets immuables traversent les équipes du développement à la production.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">Docker</h3>
+            <p style="text-align: justify">Le logiciel libre en open source se concentre sur la normalisation et la spécification des containers afin de construire un écosystème sain. Son objectif&thinsp;? Ne faire tourner qu’une seule application. Son système repose sur une utilisation minimaliste des fichiers, une gestion simple du démarrage des services et des contenairs immuables.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">Kubernetes</h3>
+            <p style="text-align: justify">Kubernetes se présente comme une plateforme d’orchestration des containers, elle abrite une quantité importante de paquets. Au-delà de son service de plateforme, Kubernetes automatise le processus de gestion d’une large palette de ces containers.</p>
+            <h2 style="text-align: justify; --fontSize: 40; line-height: 1.2;" data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated">Le monitoring de l’infrastructure</h2>
+            <p style="text-align: justify">Utilisé en fin de parcours, le monitoring permet d’analyser et de tirer les enseignements du déploiement des architectures et développement. Son but : trouver et extraire les pistes d’amélioration.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">Grafana</h3>
+            <p style="text-align: justify">Le logiciel libre multiplateformes se concentre sur la visualisation de données. Via un tableau de bord et ses graphiques, il facilite la lecture des informations et accélère l’analyse des bugs, ainsi que leur résolution.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">ELK (Elasticsearch, Logstash, Kibana)</h3>
+            <p style="text-align: justify">ELK stack collecte et analyse les journaux les plus courants du monde IT. Il centralise les données afin de résoudre les problèmes, de surveiller les applications ou de réaliser des audits. Via Logstach, le stack rassemble les données et rend possibles les alertes mails ou SMS.</p>
+            <h3 style="text-align: justify; --fontSize: 32; line-height: 1.3;" data-fontsize="32" data-lineheight="41.6px" class="fusion-responsive-typography-calculated">Prometheus</h3>
+            <p style="text-align: justify">Grâce à l’enregistrement des métriques en temps réel, Prometheus répond aux demandes en s’appuyant sur un langage de requête simple et génère des alertes. En un seul outil, les équipes rassemblent une base de données multidimensionnelle, un mécanisme de collecte évolutif et un langage de requête puissant.</p>
+            <p style="text-align: justify">De nombreux autres outils existent sur le marché et il ne s’agit pas d’être exhaustif. A ce sujet, nous venons de publier un <a href="https://www.bluesoft-group.com/le-guide-des-outils-devops/"><strong>guide des 10 outils DevOps</strong></a> qui vous aidera à faire votre choix ! Vous y trouverez<strong> une explication détaillée de chaque solution, leur prix ainsi que leurs principaux avantages et inconvénients</strong>.</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        vertical
+      </div>
+
+    </div>
+  </div>
+</main>
