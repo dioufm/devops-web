@@ -1,8 +1,18 @@
+
 name: CICD
+
+image: docker:stable
+services:
+  - docker:18.09-dind
+
+stages:
+  - build
+  - deploy
 
 on:
   push:
     branches: [devops-web-deploy-to-ec2]
+
 jobs:
   build:
     runs-on: [ubuntu-latest]
