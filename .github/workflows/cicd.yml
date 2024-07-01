@@ -30,17 +30,12 @@ jobs:
     needs: build
     runs-on: [ devops-web-deploy-aws-ec2 ]
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: deploy
-      - name: setup docker buildx
-        uses: docker/setup-buildx-action@v2
+      - name: Pull image docker from repository
+        run: docker pull docker:latest
       - name: Pull Image from docker hub
         run: docker pull mamaddiouf/devops-service:latest
       - name: Delete old container
         run: docker rm -f mamaddiouf/devops-service
-      - name: Pull image docker from repository
-        run: docker pull docker:latest
       - name: Run docker compose up
         run: docker-compose up
 
