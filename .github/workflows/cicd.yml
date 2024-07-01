@@ -33,13 +33,13 @@ jobs:
       - name: Check that the image builds
         uses: actions/checkout@v4
       - name: Pull image docker from repository
-        run: docker pull docker:latest
+        run: sudo docker pull docker:latest
       - name: Pull Image from docker hub
-        run: docker pull mamaddiouf/devops-service:latest
+        run: sudo docker pull mamaddiouf/devops-service:latest
       - name: Delete old container
-        run: docker rm -f mamaddiouf/devops-service
+        run: sudo docker rm -f mamaddiouf/devops-service
       - name: Run docker compose up
-        run: docker-compose up
+        run: sudo docker-compose up
 
 
 
